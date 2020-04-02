@@ -1,21 +1,23 @@
-package vol;
+
 
 import java.util.Date;
 
-import vol.model.Aeroport;
-import vol.model.Arrivee;
-import vol.model.Avion;
-import vol.model.Compagnie;
-import vol.model.Depart;
-import vol.model.Paiement;
-import vol.model.Particulier;
-import vol.model.Passager;
-import vol.model.Reservation;
-import vol.model.Societe;
-import vol.model.Trajet;
-import vol.model.Utilisateur;
-import vol.model.Ville;
-import vol.model.Vol;
+import model.Aeroport;
+import model.Arrivee;
+import model.Avion;
+import model.Compagnie;
+import model.Depart;
+import model.Paiement;
+import model.Particulier;
+import model.Passager;
+import model.Reservation;
+import model.Societe;
+import model.Trajet;
+import model.Utilisateur;
+import model.Ville;
+import model.Vol;
+
+
 
 public class Test {
 	public static void main(String[] args) {
@@ -30,7 +32,7 @@ public class Test {
 		sopraSteria.setTelephone("06.48.54.21.32");
 		sopraSteria.setNumeroAdresse(5);
 		sopraSteria.setRue("rue de mlqksd");
-		sopraSteria.setVille("Mérignac");
+		sopraSteria.setVille("Mï¿½rignac");
 		sopraSteria.setComplementAdresse(null);
 		sopraSteria.setPays("France");
 		
@@ -43,7 +45,7 @@ public class Test {
 		moi.setTelephone("06.45.87.20.52");
 		moi.setNumeroAdresse(5);
 		moi.setRue("impasse de Granet");
-		moi.setVille("Canéjan");
+		moi.setVille("Canï¿½jan");
 		moi.setComplementAdresse(null);
 		moi.setPays("France");
 		
@@ -58,9 +60,9 @@ public class Test {
 		
 		Passager toi = new Passager();
 		toi.setNom("Ujsdhf");
-		toi.setPrenom("Clément");
+		toi.setPrenom("Clï¿½ment");
 		toi.setDateDeNaissance(new Date());
-		toi.setNationalite("française");
+		toi.setNationalite("franï¿½aise");
 		toi.setSexe("H");
 		toi.setNumeroPasseport("qsdlk");
 		toi.setDateValidite(new Date());
