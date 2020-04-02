@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("Societe")
 public class Societe extends Client{
+	
 	private String siret;
 	private String numeroDeTva;
 	
