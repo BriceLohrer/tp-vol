@@ -1,11 +1,32 @@
 package Singleton;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import DAO.JPA.AeroportDaoJpa;
+import DAO.JPA.AvionDaoJpa;
+import DAO.JPA.CompagnieDaoJpa;
+import DAO.JPA.PaiementDaoJpa;
+import DAO.JPA.ParticulierDaoJpa;
+import DAO.JPA.PassagerDaoJpa;
+import DAO.JPA.ReservationDaoJpa;
+import DAO.JPA.SocieteDaoJpa;
+import DAO.JPA.TrajetDaoJpa;
+import DAO.JPA.UtilisateurDaoJpa;
+import DAO.JPA.VilleDaoJpa;
+import DAO.JPA.VolDaoJpa;
+import DAO.interfaces.IAeroportDao;
+import DAO.interfaces.IAvionDao;
+import DAO.interfaces.ICompagnieDao;
+import DAO.interfaces.IPaiementDao;
+import DAO.interfaces.IParticulierDao;
+import DAO.interfaces.IPassagerDao;
+import DAO.interfaces.IReservationDao;
+import DAO.interfaces.ISocieteDao;
+import DAO.interfaces.ITrajetDao;
+import DAO.interfaces.IUtilisateurDao;
+import DAO.interfaces.IVilleDao;
+import DAO.interfaces.IVolDao;
 
 
 
@@ -15,26 +36,31 @@ public class Application {
 
 	private static Application instance = null;
 
+	private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("vol");
 
-	private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("sopra-formation");
+	private final IAeroportDao aeroportDao = new AeroportDaoJpa();
 
+	private final IAvionDao avionDao = new AvionDaoJpa();
 
-	private final IAeorportDao evaluationDao = new AeroportDao();
+	private final ICompagnieDao compagnieDao = new CompagnieDaoJpa();
 
-	private final IAvionDao filiereDao = new AvionDao();
+	private final IPaiementDao paiementDao = new PaiementDaoJpa();
 
-	private final ICompagnieDao matiereDao = new CompagnieDao();
+	private final IParticulierDao particulierDao = new ParticulierDaoJpa();
 
-	private final IPaiementDao salleDao = new PaiementDao();
-
-	private final IParticulierDao stagiaireDao = new ParticulierDao();
-
-	private final IPassagerDao ueDao = new PassagerDao();
+	private final IPassagerDao passagerDao = new PassagerDaoJpa();
 	
-	private final IReservationDao ueDao = new ReservationDao();
+	private final IReservationDao reservationDao = new ReservationDaoJpa();
 	
+	private final ISocieteDao societeDao = new SocieteDaoJpa();
+
+	private final ITrajetDao trajetDao = new TrajetDaoJpa();
 	
+	private final IUtilisateurDao utilisateurDao = new UtilisateurDaoJpa();
 	
+	private final IVilleDao villeDao = new VilleDaoJpa();
+	
+	private final IVolDao volDao = new VolDaoJpa();
 	
 
 
@@ -64,49 +90,72 @@ public class Application {
 	}
 
 
-	public IEvaluationDao getEvaluationDao() {
-
-		return evaluationDao;
-
+	public IAeroportDao getAeroportDao() {
+		return aeroportDao;
 	}
 
 
-	public IFiliereDao getFiliereDao() {
-
-		return filiereDao;
-
+	public IAvionDao getAvionDao() {
+		return avionDao;
 	}
 
 
-	public IFormateurDao getFormateurDao() {
-
-		return formateurDao;
-
+	public ICompagnieDao getCompagnieDao() {
+		return compagnieDao;
 	}
 
-	public IMatiereDao getMatiereDao() {
 
-		return matiereDao;
-
+	public IPaiementDao getPaiementDao() {
+		return paiementDao;
 	}
 
-	public ISalleDao getSalleDao() {
 
-		return salleDao;
-
+	public IParticulierDao getParticulierDao() {
+		return particulierDao;
 	}
 
-	public IStagiaireDao getStagiaireDao() {
 
-		return stagiaireDao;
-
+	public IPassagerDao getPassagerDao() {
+		return passagerDao;
 	}
 
-	public IUEDao getUeDao() {
 
-		return ueDao;
-
+	public IReservationDao getReservationDao() {
+		return reservationDao;
 	}
+
+
+	public ISocieteDao getSocieteDao() {
+		return societeDao;
+	}
+
+
+	public ITrajetDao getTrajetDao() {
+		return trajetDao;
+	}
+
+
+	public IUtilisateurDao getUtilisateurDao() {
+		return utilisateurDao;
+	}
+
+
+	public IVilleDao getVilleDao() {
+		return villeDao;
+	}
+
+
+	public IVolDao getVolDao() {
+		return volDao;
+	}
+
+
+	public static void setInstance(Application instance) {
+		Application.instance = instance;
+	}
+
+
+
 
 }
 
