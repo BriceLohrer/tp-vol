@@ -126,7 +126,6 @@ public class Test {
 		
 		airfrance.addVol(vol1);
 		airbus.addVol(vol1);
-		dep.setVols(vol1);
 		
 		Trajet traj = new Trajet();
 		traj.AddVol(vol1);
