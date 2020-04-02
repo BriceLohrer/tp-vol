@@ -118,13 +118,13 @@ public abstract class Client {
 	public List<Passager> getPassagers() {
 		return passagers;
 	}
-	public void setPassagers(ArrayList<Passager> passagers) {
+	public void setPassagers(List<Passager> passagers) {
 		this.passagers = passagers;
 	}
 	public List<Reservation> getReservations() {
 		return reservations;
 	}
-	public void setReservations(ArrayList<Reservation> reservations) {
+	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
 	}
 	

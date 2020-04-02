@@ -54,7 +54,7 @@ public class Compagnie {
 
 
 
-	public void setVols(ArrayList<Vol> vols) {
+	public void setVols(List<Vol> vols) {
 		this.vols = vols;
 	}
 
