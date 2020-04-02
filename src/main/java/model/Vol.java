@@ -1,16 +1,38 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.Version;
 
 
 public class Vol {
 
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Version
+	private int version;
+	@Column(name = "numeroDeVol", length = 5)
 	private String numeroDeVol;
+	@Column(name = "ouvert", length = 100, nullable = false)
 	private Boolean ouvert;
-	private ArrayList<Trajet> trajets = new ArrayList<Trajet>();
+	@ManyToMany
+	@JoinColumn(name = "trajet_id")
+	private List<Trajet> trajets = new ArrayList<Trajet>();
+	@Embedded
 	private Compagnie compagnie;
+	@Embedded
 	private Avion avion;
+	@Embedded
 	private Arrivee arrivee;
+	@Embedded
 	private Depart depart;
 
 	
@@ -35,7 +57,7 @@ public class Vol {
 		this.ouvert = ouvert;
 	}
 
-	public ArrayList<Trajet> getTrajets() {
+	public List<Trajet> getTrajets() {
 		return trajets;
 	}
 
@@ -77,6 +99,23 @@ public class Vol {
 	
 	public void addTrajet(Trajet trajet) {
 		this.trajets.add(trajet);
+	}
+
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 	@Override

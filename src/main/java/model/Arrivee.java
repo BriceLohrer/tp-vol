@@ -2,11 +2,20 @@ package model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+
+
+
+@Embeddable
 public class Arrivee {
 	
 	private Date dateArrivee;
+	@Embedded
 	private Aeroport aeroport;
-	private Vol vol;
+	@Column(name = "vols", length = 255)
+	private Vol vols;
 	
 	public Arrivee() {
 		super();
@@ -24,11 +33,12 @@ public class Arrivee {
 	public void setAeroprt(Aeroport aeroprt) {
 		this.aeroport = aeroprt;
 	}
-	public Vol getVol() {
-		return vol;
+	
+	public Vol getVols() {
+		return vols;
 	}
-	public void setVol(Vol vol) {
-		this.vol = vol;
+	public void setVols(Vol vols) {
+		this.vols = vols;
 	}
 	@Override
 	public String toString() {

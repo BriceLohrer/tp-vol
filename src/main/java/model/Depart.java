@@ -2,10 +2,17 @@ package model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+
+@Embeddable
 public class Depart {
-	
+	@Column(name = "datedepart", length = 255)
 	private Date dateDepart;
+	@Column(name = "vols", length = 255)
 	private Vol vols;
+	@Embedded
 	private Aeroport aeroport;
 	
 	public Depart() {

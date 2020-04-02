@@ -1,10 +1,17 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 
 public class Trajet {
 	
-	private ArrayList<Vol> volsOrdonne = new ArrayList<Vol>();
+	
+	@ManyToMany
+	@JoinColumn(name = "vols_id")
+	private List<Vol> volsOrdonne = new ArrayList<Vol>();
 	private Reservation res;
 	
 	public Trajet() {
@@ -12,7 +19,7 @@ public class Trajet {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ArrayList<Vol> getVolsOrdonne() {
+	public List<Vol> getVolsOrdonne() {
 		return volsOrdonne;
 	}
 
