@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -13,17 +14,16 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 
-
+@Entity
 public class Vol {
-
 	@Id
 	@GeneratedValue
 	private Long id;
 	@Version
 	private int version;
-	@Column(name = "numeroDeVol", length = 5)
+	@Column( length = 5)
 	private String numeroDeVol;
-	@Column(name = "ouvert", length = 100, nullable = false)
+	@Column(length = 100, nullable = false)
 	private Boolean ouvert;
 	@ManyToMany
 	@JoinTable(name = "plan_de_vol",joinColumns = @JoinColumn(name="vol_id"),inverseJoinColumns = @JoinColumn(name="trajet_id")

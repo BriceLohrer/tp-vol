@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,7 +35,7 @@ public class Passager {
 	@JoinColumn(name = "client_id")
 	private Client client;
 	@OneToMany (mappedBy = "passager")
-	private ArrayList<Reservation>reservations = new ArrayList<Reservation>();
+	private List<Reservation>reservations = new ArrayList<Reservation>();
 	
 	// generator
 
@@ -104,7 +105,7 @@ public class Passager {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	public ArrayList<Reservation> getReservations() {
+	public List<Reservation> getReservations() {
 		return reservations;
 	}
 	public void setReservations(ArrayList<Reservation> reservations) {

@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
@@ -19,8 +18,8 @@ public class Trajet {
 	private Long id;
 	@Version
 	private int version;
-	@ManyToMany (mappedBy = "plan_de_vol")
-	private ArrayList<Vol> volsOrdonne = new ArrayList<Vol>();
+	@ManyToMany (mappedBy = "trajets")
+	private List<Vol> volsOrdonne = new ArrayList<Vol>();
 	@OneToOne
 	@JoinColumn(name="reservation_id")
 	private Reservation res;

@@ -4,7 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -12,10 +11,8 @@ import javax.persistence.ManyToOne;
 public class Depart {
 	@Column(name = "datedepart", length = 255)
 	private Date dateDepart;
-	@Column(name = "vols", length = 255)
-	private Vol vols;
 	@ManyToOne
-	@JoinColumn (name = "aeroport_id")
+	@JoinColumn (name = "aeroport_id_depart")
 	private Aeroport aeroport;
 	
 	public Depart() {
@@ -31,13 +28,7 @@ public class Depart {
 		this.dateDepart = dateDepart;
 	}
 
-	public Vol getVols() {
-		return vols;
-	}
-
-	public void setVols(Vol vols) {
-		this.vols = vols;
-	}
+	
 
 	public Aeroport getAeroport() {
 		return aeroport;

@@ -24,7 +24,7 @@ public class Ville {
 	private String nom;
 	@Column(name = "pays", nullable = false)
 	private String pays;
-	@ManyToMany(mappedBy="plan_des_aeroports")
+	@ManyToMany(mappedBy="villes")
 	private List<Aeroport> aeroports = new ArrayList<Aeroport>();
 	
 	public Ville() {

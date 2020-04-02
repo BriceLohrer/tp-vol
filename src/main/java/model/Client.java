@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -9,10 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
@@ -38,9 +37,9 @@ public abstract class Client {
 	@OneToOne (mappedBy = "client")
 	private Utilisateur utilisateur;
 	@OneToMany (mappedBy = "client")
-	private ArrayList<Passager>passagers = new ArrayList<Passager>();
+	private List<Passager>passagers = new ArrayList<Passager>();
 	@OneToMany (mappedBy = "client")
-	private ArrayList<Reservation>reservations = new ArrayList<Reservation>();
+	private List<Reservation>reservations = new ArrayList<Reservation>();
 	
 	//Generator
 	
@@ -116,13 +115,13 @@ public abstract class Client {
 		this.utilisateur = utilisateur;
 	}
 
-	public ArrayList<Passager> getPassagers() {
+	public List<Passager> getPassagers() {
 		return passagers;
 	}
 	public void setPassagers(ArrayList<Passager> passagers) {
 		this.passagers = passagers;
 	}
-	public ArrayList<Reservation> getReservations() {
+	public List<Reservation> getReservations() {
 		return reservations;
 	}
 	public void setReservations(ArrayList<Reservation> reservations) {

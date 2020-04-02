@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +20,7 @@ public class Compagnie {
 	@Column(nullable = false)
 	private String nom;
 	@OneToMany (mappedBy = "compagnie")
-	private ArrayList<Vol> vols	 = new ArrayList<Vol>();
+	private List<Vol> vols	 = new ArrayList<Vol>();
 	
 	public Compagnie() {
 		super();
@@ -47,7 +48,7 @@ public class Compagnie {
 
 
 
-	public ArrayList<Vol> getVols() {
+	public List<Vol> getVols() {
 		return vols;
 	}
 

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ public class Avion {
 	
 	private String modele;
 	@OneToMany (mappedBy = "avion")
-	private ArrayList<Vol> vols	 = new ArrayList<Vol>();
+	private List<Vol> vols	 = new ArrayList<Vol>();
 	
 	public Avion() {
 		super();
@@ -44,7 +45,7 @@ public class Avion {
 	}
 
 
-	public ArrayList<Vol> getVols() {
+	public List<Vol> getVols() {
 		return vols;
 	}
 

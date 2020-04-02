@@ -2,9 +2,7 @@ package model;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -12,13 +10,10 @@ import javax.persistence.ManyToOne;
 
 @Embeddable
 public class Arrivee {
-	
 	private Date dateArrivee;
 	@ManyToOne
-	@JoinColumn(name="aeroport_id")
+	@JoinColumn(name="aeroport_id_arrivee")
 	private Aeroport aeroport;
-	@Column(length = 255)
-	private Vol vols;
 	
 	public Arrivee() {
 		super();
@@ -37,12 +32,6 @@ public class Arrivee {
 		this.aeroport = aeroprt;
 	}
 	
-	public Vol getVols() {
-		return vols;
-	}
-	public void setVols(Vol vols) {
-		this.vols = vols;
-	}
 	@Override
 	public String toString() {
 		return "Arrivee [dateArrivee=" + dateArrivee + ", aeroport=" + aeroport + "]";
