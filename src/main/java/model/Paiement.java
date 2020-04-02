@@ -6,12 +6,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Version;
 
 @Entity
 public class Paiement {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	private String type;
 	@Column(nullable = false)
 	private Float montant;

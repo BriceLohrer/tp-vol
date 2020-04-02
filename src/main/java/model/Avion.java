@@ -2,9 +2,22 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Version;
+
+@Entity
 public class Avion {
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Version
+	private int version;
 	
 	private String modele;
+	@OneToMany (mappedBy = "avion")
 	private ArrayList<Vol> vols	 = new ArrayList<Vol>();
 	
 	public Avion() {

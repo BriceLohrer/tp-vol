@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Embeddable
 public class Depart {
@@ -12,7 +14,8 @@ public class Depart {
 	private Date dateDepart;
 	@Column(name = "vols", length = 255)
 	private Vol vols;
-	@Embedded
+	@ManyToOne
+	@JoinColumn (name = "aeroport_id")
 	private Aeroport aeroport;
 	
 	public Depart() {

@@ -2,10 +2,23 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Version;
 
+@Entity
 public class Compagnie {
-	
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Version
+	private int version;
+	@Column(nullable = false)
 	private String nom;
+	@OneToMany (mappedBy = "compagnie")
 	private ArrayList<Vol> vols	 = new ArrayList<Vol>();
 	
 	public Compagnie() {

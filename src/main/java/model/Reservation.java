@@ -7,12 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Version;
 
 @Entity
 public class Reservation {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	private Boolean annulee;
 	private Boolean confirmee;
 	private Boolean ouverte;

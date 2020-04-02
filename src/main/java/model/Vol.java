@@ -8,7 +8,9 @@ import javax.persistence.Embedded;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 
 
@@ -24,11 +26,14 @@ public class Vol {
 	@Column(name = "ouvert", length = 100, nullable = false)
 	private Boolean ouvert;
 	@ManyToMany
-	@JoinColumn(name = "trajet_id")
+	@JoinTable(name = "plan_de_vol",joinColumns = @JoinColumn(name="vol_id"),inverseJoinColumns = @JoinColumn(name="trajet_id")
+	)
 	private List<Trajet> trajets = new ArrayList<Trajet>();
-	@Embedded
+	@ManyToOne
+	@JoinColumn(name="compagnie_id")
 	private Compagnie compagnie;
-	@Embedded
+	@ManyToOne
+	@JoinColumn(name="avion_id")
 	private Avion avion;
 	@Embedded
 	private Arrivee arrivee;
