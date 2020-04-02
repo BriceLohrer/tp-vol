@@ -1,8 +1,24 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+@Entity
 public class Utilisateur {
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Column(nullable = false)
 	private String identifiant;
+	@Column(nullable = false)
 	private String motDePasse;
+	@OneToOne
+	@JoinColumn (name="client_id")
 	private Client client;
 	
 	//generator

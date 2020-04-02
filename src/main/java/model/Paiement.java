@@ -1,8 +1,22 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Paiement {
+	@Id
+	@GeneratedValue
+	private Long id;
 	private String type;
+	@Column(nullable = false)
 	private Float montant;
+	@OneToOne
+	@JoinColumn(name="reservation_id")
 	private Reservation reservation;
 	
 	//generator

@@ -27,7 +27,6 @@ public class Test {
 		sopraSteria.setNumeroDeTva("5454");
 		sopraSteria.setNom("Sopra Steria");
 		sopraSteria.setCodePostal(33700);
-		sopraSteria.setType("Societe");
 		sopraSteria.setMail("mlskqsd@qlksjd.qsd");
 		sopraSteria.setTelephone("06.48.54.21.32");
 		sopraSteria.setNumeroAdresse(5);
@@ -40,7 +39,6 @@ public class Test {
 		moi.setPrenom("Damien");
 		moi.setNom("Dubreuil");
 		moi.setCodePostal(33610);
-		moi.setType("Particulier");
 		moi.setMail("dubreuil.damien@laposte.net");
 		moi.setTelephone("06.45.87.20.52");
 		moi.setNumeroAdresse(5);

@@ -3,17 +3,34 @@ package model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Passager {
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Column(nullable = false)
 	private String nom;
 	private String prenom;
 	private Date dateDeNaissance;
 	private String nationalite;
 	private String sexe;
+	@Column(nullable = false)
 	private String numeroPasseport;
 	private Date dateValidite;
 	private String typePieceIdentite;
 	private Boolean handicap;
+	@ManyToOne
+	@JoinColumn(name = "client_id")
 	private Client client;
+	@OneToMany (mappedBy = "passager")
 	private ArrayList<Reservation>reservations = new ArrayList<Reservation>();
 	
 	// generator

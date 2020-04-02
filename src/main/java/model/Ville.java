@@ -2,10 +2,21 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
+@Entity
 public class Ville {
-	
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Column(nullable=false)
 	private String nom;
 	private String pays;
+	@Transient
 	private ArrayList<Aeroport> aeroports = new ArrayList<Aeroport>();
 	
 	public Ville() {

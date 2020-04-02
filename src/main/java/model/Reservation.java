@@ -1,13 +1,32 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Reservation {
+	@Id
+	@GeneratedValue
+	private Long id;
 	private Boolean annulee;
 	private Boolean confirmee;
 	private Boolean ouverte;
+	@Column (nullable = false)
 	private String numeroDeReservation;
+	@ManyToOne
+	@JoinColumn(name="passager_id")
 	private Passager passager;
+	@ManyToOne
+	@JoinColumn(name = "client_id")
 	private Client client;
+	@OneToOne (mappedBy = "reservation")
 	private Paiement paiement;
+	@OneToOne(mappedBy = "res")
 	private Trajet traj;
 	
 	//generator

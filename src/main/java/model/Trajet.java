@@ -2,9 +2,22 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+@Entity
 public class Trajet {
-	
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Transient
 	private ArrayList<Vol> volsOrdonne = new ArrayList<Vol>();
+	@OneToOne
+	@JoinColumn(name="reservation_id")
 	private Reservation res;
 	
 	public Trajet() {

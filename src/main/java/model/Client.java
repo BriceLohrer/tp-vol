@@ -2,9 +2,28 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type")
 public abstract class Client {
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Column (nullable = false)
 	private String nom;
-	private String type;
+	@Column (nullable = false)
 	private String mail;
 	private String telephone;
 	private Integer numeroAdresse;
@@ -13,8 +32,11 @@ public abstract class Client {
 	private String ville;
 	private String complementAdresse;
 	private String pays;
+	@OneToOne (mappedBy = "client")
 	private Utilisateur utilisateur;
+	@OneToMany (mappedBy = "client")
 	private ArrayList<Passager>passagers = new ArrayList<Passager>();
+	@OneToMany (mappedBy = "client")
 	private ArrayList<Reservation>reservations = new ArrayList<Reservation>();
 	
 	//Generator
@@ -25,7 +47,6 @@ public abstract class Client {
 	public Client(String nom, String type, String mail) {
 		super();
 		this.nom = nom;
-		this.type = type;
 		this.mail = mail;
 	}
 
@@ -36,12 +57,6 @@ public abstract class Client {
 	}
 	public void setNom(String nom) {
 		this.nom = nom;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
 	}
 	public String getMail() {
 		return mail;
@@ -124,7 +139,7 @@ public abstract class Client {
 	
 	@Override
 	public String toString() {
-		return "Client [nom=" + nom + ", type=" + type + ", mail=" + mail + ", telephone=" + telephone
+		return "Client [nom=" + nom  + ", mail=" + mail + ", telephone=" + telephone
 				+ ", numeroAdresse=" + numeroAdresse + ", codePostal=" + codePostal + ", rue=" + rue + ", ville="
 				+ ville + ", complementAdresse=" + complementAdresse + ", pays=" + pays + ", utilisateur=" + utilisateur
 				+ "]";

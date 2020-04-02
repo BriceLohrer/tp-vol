@@ -2,15 +2,29 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 
+@Entity
 public class Vol {
-
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Column (nullable =false)
 	private String numeroDeVol;
 	private Boolean ouvert;
+	@Transient
 	private ArrayList<Trajet> trajets = new ArrayList<Trajet>();
+	@Transient
 	private Compagnie compagnie;
+	@Transient
 	private Avion avion;
+	@Transient
 	private Arrivee arrivee;
+	@Transient
 	private Depart depart;
 
 	

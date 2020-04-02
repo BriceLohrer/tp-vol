@@ -2,10 +2,25 @@
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-	<persistence-unit name="sopra-formation" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="vol" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-		<class>sopra.formation.model.Evaluation</class>
+		<class>model.Aeroport</class>
+		<class>model.Arrivee</class>
+		<class>model.Avion</class>
+		<class>model.Client</class>
+		<class>model.Compagnie</class>
+		<class>model.Depart</class>
+		<class>model.Paiement</class>
+		<class>model.Particulier</class>
+		<class>model.Passager</class>
+		<class>model.Reservation</class>
+		<class>model.Societe</class>
+		<class>model.Trajet</class>
+		<class>model.Utilisateur</class>
+		<class>model.Ville</class>
+		<class>model.Vol</class>
+		
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
