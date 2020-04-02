@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +26,7 @@ public class Trajet {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ArrayList<Vol> getVolsOrdonne() {
+	public List<Vol> getVolsOrdonne() {
 		return volsOrdonne;
 	}
 

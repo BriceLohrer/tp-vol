@@ -1,23 +1,31 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.Version;
+
 
 @Entity
+@Table(name="Ville")
 public class Ville {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Column(nullable=false)
+	@Version
+	private int version;
+	@Column(name = "nom", nullable = false)
 	private String nom;
+	@Column(name = "pays", nullable = false)
 	private String pays;
-	@Transient
-	private ArrayList<Aeroport> aeroports = new ArrayList<Aeroport>();
+	@ManyToMany(mappedBy="villes")
+	private List<Aeroport> aeroports = new ArrayList<Aeroport>();
 	
 	public Ville() {
 		super();
@@ -39,7 +47,7 @@ public class Ville {
 		this.pays = pays;
 	}
 
-	public ArrayList<Aeroport> getAeroports() {
+	public List<Aeroport> getAeroports() {
 		return aeroports;
 	}
 
@@ -55,6 +63,23 @@ public class Ville {
 	public String toString() {
 		return "Ville [nom=" + nom + ", pays=" + pays + "]";
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
 	
 	
 
