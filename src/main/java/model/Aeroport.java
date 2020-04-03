@@ -69,6 +69,11 @@ public class Aeroport {
 	public void setVersion(int version) {
 		this.version = version;
 	}
+
+	@Override
+	public String toString() {
+		return "Aeroport [id=" + id + ", version=" + version + ", nom=" + nom + "]";
+	}
 	
 	
 	
