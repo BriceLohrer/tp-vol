@@ -32,7 +32,7 @@ public class Test {
 		sopraSteria.setTelephone("06.48.54.21.32");
 		sopraSteria.setNumeroAdresse(5);
 		sopraSteria.setRue("rue de mlqksd");
-		sopraSteria.setVille("M�rignac");
+		sopraSteria.setVille("Mérignac");
 		sopraSteria.setComplementAdresse(null);
 		sopraSteria.setPays("France");
 		

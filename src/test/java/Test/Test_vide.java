@@ -36,7 +36,7 @@ public class Test_vide {
 		sopraSteria.setTelephone("06.48.54.21.32");
 		sopraSteria.setNumeroAdresse(5);
 		sopraSteria.setRue("rue de mlqksd");
-		sopraSteria.setVille("Merignac");
+		sopraSteria.setVille("Mérignac");
 		sopraSteria.setComplementAdresse(null);
 		sopraSteria.setPays("France");
 
@@ -50,10 +50,11 @@ public class Test_vide {
 		moi.setTelephone("06.45.87.20.52");
 		moi.setNumeroAdresse(5);
 		moi.setRue("impasse de Granet");
-		moi.setVille("Canejan");
+		moi.setVille("Canéjan");
 		moi.setComplementAdresse(null);
 		moi.setPays("France");
-
+		
+		
 		moi = Application.getInstance().getParticulierDao().save(moi); // managed
 
 		Utilisateur user = new Utilisateur();
