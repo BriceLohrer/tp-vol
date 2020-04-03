@@ -47,6 +47,18 @@ public class Reservation {
 	public Boolean getAnnulee() {
 		return annulee;
 	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public int getVersion() {
+		return version;
+	}
+	public void setVersion(int version) {
+		this.version = version;
+	}
 	public void setAnnulee(Boolean annulee) {
 		this.annulee = annulee;
 	}

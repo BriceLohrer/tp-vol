@@ -53,10 +53,6 @@ public class Aeroport {
 		this.villes.add(villes);
 	}
 
-	@Override
-	public String toString() {
-		return "Aeroport [nom=" + nom + ", villes=" + villes + "]";
-	}
 
 	public Long getId() {
 		return id;

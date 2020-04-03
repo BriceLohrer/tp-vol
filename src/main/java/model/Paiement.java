@@ -38,6 +38,18 @@ public class Paiement {
 	public String getType() {
 		return type;
 	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public int getVersion() {
+		return version;
+	}
+	public void setVersion(int version) {
+		this.version = version;
+	}
 	public void setType(String type) {
 		this.type = type;
 	}

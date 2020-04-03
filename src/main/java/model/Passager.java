@@ -49,6 +49,22 @@ public class Passager {
 	public String getNom() {
 		return nom;
 	}
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
